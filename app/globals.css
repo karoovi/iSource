@@ -2,7 +2,7 @@
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
-
+// manual trigger
 :root {
   /* Triadic scheme: Green (#029434) @ ~145° | Orange @ ~25° | Indigo @ ~265° */
   --background: oklch(0.97 0.008 145);

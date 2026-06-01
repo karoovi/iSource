@@ -58,15 +58,15 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-card">
+    <section id="contact" className="py-24 lg:py-32 bg-gradient-to-b from-background to-primary/6">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Column */}
-          <div>
+          <div className="animate-slide-in-left">
             <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-4">
               Contact Us
             </p>
-            <h2 className="font-serif text-4xl lg:text-5xl font-medium tracking-tight text-foreground leading-tight">
+            <h2 className="font-serif text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight">
               Let&apos;s discuss your project
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
@@ -75,18 +75,18 @@ export function ContactSection() {
             </p>
 
             <div className="mt-12 space-y-6">
-              {contactInfo.map((item) => (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="flex items-center gap-4 group"
-                >
-                  <div className="p-3 bg-primary/10 border border-primary/20 rounded-lg group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-primary">
-                    <item.icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">{item.label}</p>
-                    <p className="font-medium text-foreground group-hover:text-primary transition-colors">
+            {contactInfo.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="group flex items-start gap-4 p-4 rounded-lg hover-lift smooth-transition"
+              >
+                <div className="p-3 bg-accent/12 border border-accent/30 rounded-lg smooth-transition group-hover:bg-accent group-hover:text-accent-foreground text-accent">
+                  <item.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">{item.label}</p>
+                  <p className="font-medium text-foreground smooth-transition group-hover:text-accent">
                       {item.value}
                     </p>
                   </div>
@@ -96,12 +96,12 @@ export function ContactSection() {
           </div>
 
           {/* Right Column - Form */}
-          <div className="bg-background p-8 lg:p-10 rounded-lg border border-border">
+          <div className="bg-gradient-to-br from-primary/8 to-primary/3 p-8 lg:p-10 rounded-xl border-2 border-primary/25 backdrop-blur-sm animate-slide-in-right">
             {isSubmitted ? (
               <div className="flex flex-col items-center justify-center h-full min-h-[400px] text-center">
-                <div className="w-16 h-16 bg-primary/15 border border-primary/25 rounded-full flex items-center justify-center mb-6">
-                  <Send className="w-8 h-8 text-primary" />
-                </div>
+              <div className="w-16 h-16 bg-accent/15 border border-accent/30 rounded-full flex items-center justify-center mb-6">
+                <Send className="w-8 h-8 text-accent" />
+              </div>
                 <h3 className="font-serif text-2xl font-medium text-foreground mb-2">
                   Message Sent
                 </h3>
@@ -171,7 +171,7 @@ export function ContactSection() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 smooth-transition hover-lift"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}

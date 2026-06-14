@@ -51,7 +51,7 @@ export function AboutSection() {
                   <div className="w-24 h-24 mx-auto bg-accent text-accent-foreground rounded-full flex items-center justify-center mb-4 border-4 border-accent/30 smooth-transition group-hover:scale-110">
                     <Users className="w-12 h-12" />
                   </div>
-                  <p className="text-foreground font-bold">Building exceptional teams since 2021</p>
+                  <p className="text-foreground font-bold">Building exceptional teams since 2012</p>
                   <p className="text-muted-foreground text-sm mt-1">Trusted by 50+ enterprise partners</p>
                 </div>
               </div>

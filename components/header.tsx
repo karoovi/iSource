@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -17,10 +18,20 @@ export function Header() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-lg smooth-transition">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="font-serif text-2xl font-bold tracking-tight text-accent smooth-transition group-hover:text-white">i</span>
-          <span className="font-serif text-2xl font-bold tracking-tight text-white">Source</span>
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-2 lg:px-8">
+        <Link href="/" className="flex items-center gap-3 group hover:opacity-90 smooth-transition">
+          <div className="relative h-12 w-12 flex-shrink-0">
+            <Image
+              src="/logo.png"
+              alt="iSource Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
+          <div className="flex flex-col">
+            <span className="font-serif text-lg font-bold tracking-tight text-white leading-none">iSource</span>
+            <span className="text-xs text-accent font-semibold">Staffing Solutions</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
